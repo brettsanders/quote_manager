@@ -1,0 +1,1 @@
+Here's my simple quote manager.
