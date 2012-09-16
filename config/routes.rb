@@ -1,4 +1,8 @@
 QuoteManager::Application.routes.draw do
+
+  resources :analyses
+  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
