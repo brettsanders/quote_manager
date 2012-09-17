@@ -3,14 +3,11 @@ class AnalysesController < ApplicationController
   before_filter :authenticate, :only => :show
 
   def index
-    @analyses = [
-      "critique-of-pure-reason",
-      "critique-of-practical-reason"
-    ]
+    @analyses = Analysis.all
   end
 
   def show
-    @analysis = params[:id]
+    @analysis = Analysis.find(params[:id])
   end
 
   private

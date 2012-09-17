@@ -2,6 +2,6 @@
 
 <ul>
 <% @analyses.each do |analysis| %>
-  <li><%= link_to analysis, analysis_path(analysis) %></li>
+  <li><%= link_to analysis.text, analysis_path(analysis) %></li>
 <% end %>
 </ul>
