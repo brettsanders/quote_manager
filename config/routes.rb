@@ -1,5 +1,7 @@
 QuoteManager::Application.routes.draw do
 
+  resources :quotes
+
   resources :analyses
   
 
