@@ -1,0 +1,8 @@
+<div class="book">
+  <div class="analysis-name"><%= book.analysis.text %></div>
+  <div class="book-title"><%= book.title %></div>
+  <div class="rating-title <%= dom_id(book.rating) %>"><%= book.rating.title %></div>
+  <!-- Breaks Layout 
+  <div class="time" datetime="<%= book.quote.updated_at %>"><%= book.quote.updated_at.to_formatted_s(:short) %></div>
+  -->
+</div>

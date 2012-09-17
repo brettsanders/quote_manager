@@ -1,0 +1,13 @@
+<header>
+  <p>Books</p>
+</header>
+
+Here's a list of all the current books for our quotes : 
+
+<ul>
+  <% @books.each do |book| %>
+    <li><%= book.title %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Back to Quotes", quotes_path %>
