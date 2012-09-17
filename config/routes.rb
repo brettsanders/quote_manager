@@ -3,6 +3,8 @@ QuoteManager::Application.routes.draw do
   resources :quotes
 
   resources :analyses
+
+
   
 
   # The priority is based upon order of creation:

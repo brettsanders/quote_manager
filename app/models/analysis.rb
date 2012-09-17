@@ -1,6 +1,8 @@
 class Analysis < ActiveRecord::Base
   attr_accessible :text, :kind
 
+  has_many :books
+
   validates :text, presence: true
   validates :kind, presence: true
 
