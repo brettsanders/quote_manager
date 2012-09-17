@@ -35,7 +35,7 @@ class QuotesController < ApplicationController
   # POST /quotes
   # POST /quotes.json
   def create
-    @quote = Quote.new(params[:quote])
+    @quote = Quote.create(params[:quote])
 
     respond_with @quote
   end
@@ -44,8 +44,17 @@ class QuotesController < ApplicationController
   # PUT /quotes/1.json
   def update
     @quote = Quote.find(params[:id])
+    update_was_successful = @quote.update_attributes(params[:quote])
 
-    respond_with @quote
+    respond_with @quote do |format|
+      format.html {
+        if update_was_successful
+          redirect_to(quotes_path, notice: "Update successful!")
+        else
+          render 'edit'
+        end
+      }
+    end
   end
 
   # DELETE /quotes/1

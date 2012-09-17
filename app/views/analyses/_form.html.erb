@@ -1,0 +1,7 @@
+<%= semantic_form_for [@analysis.quote, @analysis] do |form| %>
+  <%= form.inputs "Analysis" do %>
+    <%= form.input :text %>
+    <%= form.input :kind %>
+  <% end %>
+  <%= form.buttons %>
+<% end %>

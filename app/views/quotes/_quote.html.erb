@@ -1,4 +1,18 @@
 <div class="quote">
   pg <%= quote.page %><%= quote_icon_links(quote) %>
-  <%= render quote.books %>
+  
+  
+    <p class="addlink"><%= link_to "+ Add Analysis for Quote", new_quote_analysis_path(quote) %></p>
+    <div class="analysis-name"> 
+      <% quote.analyses.each do |analysis| %>
+      <div class="analysis <%= dom_class_first(analysis, analysis.quote.analyses) %> <%= cycle('odd', 'even') %>">
+        <%= analysis.kind %> Analysis : <p><%= analysis.text %> 
+        <%= link_to_icon('edit', edit_quote_analysis_path(analysis.quote, analysis)) %>
+        <%= link_to_icon('destroy', quote_analysis_path(analysis.quote, analysis),
+            confirm: "Sure you want to delete this analysis?",
+            method: :delete ) %></p>
+      </div>
+    <% end %>
+    </div>
+  
 </div>
